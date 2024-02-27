@@ -6,7 +6,7 @@
 /*   By: ehay <ehay@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/26 15:03:51 by ehay              #+#    #+#             */
-/*   Updated: 2024/02/26 15:04:19 by ehay             ###   ########.fr       */
+/*   Updated: 2024/02/27 15:41:49 by ehay             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,7 +18,21 @@
 # include "stdarg.h"          // fonction va_
 # include "stddef.h"          // size_t
 # include "limits.h"          // INT_MIN et INT_MAX
-# include "signal.h"
+# include "minilibx-linux/mlx.h"
+
+# define WINDOW_WIDTH 960
+# define WINDOW_HEIGHT 540
+
+# define ESC 65307
+# define W 119
+# define UP 65362
+# define A 97
+# define LEFT 65361
+# define S 115
+# define DOWN 65364
+# define D 100
+# define RIGHT 65363
+# define R 114
 
 ////// UTILS
 // ft_printf
