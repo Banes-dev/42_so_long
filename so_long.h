@@ -6,7 +6,7 @@
 /*   By: ehay <ehay@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/26 15:03:51 by ehay              #+#    #+#             */
-/*   Updated: 2024/02/27 15:41:49 by ehay             ###   ########.fr       */
+/*   Updated: 2024/03/11 16:19:57 by ehay             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,7 +18,7 @@
 # include "stdarg.h"          // fonction va_
 # include "stddef.h"          // size_t
 # include "limits.h"          // INT_MIN et INT_MAX
-# include "minilibx-linux/mlx.h"
+# include "mlx_linux/mlx.h"
 
 # define WINDOW_WIDTH 960
 # define WINDOW_HEIGHT 540
