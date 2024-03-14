@@ -6,22 +6,23 @@ NAME = so_long
 FUNC = so_long.c utils/printf.c utils/printf_utils.c
 OBJS = ${FUNC:.c=.o}
 
-MLX = ./mlx_linux/
-# MLX_FLAGS = -lft -lmlx -lmlx_Linux -lX11 -lXext -lm
-MLX_TEST = -I/usr/include -Imlx_linux -O3
+MLX_PATH = ./mlx/
+LFLAGS = -lmlx -lmlx_Linux -lX11 -lXext -lm
+
 
 all: 	${NAME}
 
 ${NAME}: ${OBJS}
-	${CC} ${CFLAGS} ${OBJS} ${MLX_TEST} -o ${NAME}
+	make -C $(MLX_PATH) --no-print-directory
+	${CC} ${CFLAGS} ${OBJS} -o ${NAME} -L$(MLX_PATH) $(LFLAGS)
 
 clean:	
 	rm -f ${OBJS}
-	@make clean -C ${MLX} --no-print-directory
+	@make clean -C ${MLX_PATH} --no-print-directory
 
 fclean:	clean
 	rm -f ${NAME}
-	@make clean -C ${MLX} --no-print-directory
+	@make clean -C ${MLX_PATH} --no-print-directory
 
 re:	fclean all
 

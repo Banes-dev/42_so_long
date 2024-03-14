@@ -18,7 +18,7 @@
 # include "stdarg.h"          // fonction va_
 # include "stddef.h"          // size_t
 # include "limits.h"          // INT_MIN et INT_MAX
-# include "mlx_linux/mlx.h"
+# include "mlx/mlx.h"
 
 # define WINDOW_WIDTH 960
 # define WINDOW_HEIGHT 540

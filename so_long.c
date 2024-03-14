@@ -6,7 +6,7 @@
 /*   By: ehay <ehay@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/26 15:13:08 by ehay              #+#    #+#             */
-/*   Updated: 2024/03/11 16:20:42 by ehay             ###   ########.fr       */
+/*   Updated: 2024/03/12 13:16:32 by ehay             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -57,10 +57,13 @@
 
 int	main(int argc, char **argv)
 {
+	// void *mlx_ptr;
+
 	if (argc == 2 && argv[1] != NULL)
 	{
 		// code
         ft_printf("ouiiiiiiiii\n");
+		// mlx_ptr = mlx_init();
 	}
 	else
 	{
