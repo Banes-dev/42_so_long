@@ -3,7 +3,7 @@ CC = cc
 CFLAGS = -g -Wall -Wextra -Werror
 
 NAME = so_long
-FUNC = src/so_long.c src/error.c src/utils/printf.c src/utils/printf_utils.c
+FUNC = src/so_long.c src/error.c src/map.c src/utils/printf.c src/utils/printf_utils.c src/utils/other_utils.c
 OBJS = ${FUNC:.c=.o}
 
 MLX_PATH = ./mlx/

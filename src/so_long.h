@@ -6,7 +6,7 @@
 /*   By: ehay <ehay@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/26 15:03:51 by ehay              #+#    #+#             */
-/*   Updated: 2024/03/15 15:40:50 by ehay             ###   ########.fr       */
+/*   Updated: 2024/03/18 16:11:48 by ehay             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,6 +18,8 @@
 # include "stdarg.h"          // fonction va_
 # include "stddef.h"          // size_t
 # include "limits.h"          // INT_MIN et INT_MAX
+# include "fcntl.h" 		  // Read
+# include "string.h" 		  // Strerror
 # include "../mlx/mlx.h"
 
 # define WINDOW_WIDTH 960
@@ -105,6 +107,14 @@ typedef struct s_game_instance
 	t_game_objs			game_objs;
 }	t_game_instance;
 
+////// GAME
+// Map
+int		ft_open_map(char *map, t_game_instance *game_init);
+
+// Error
+void	ft_error(int num_error);
+
+
 ////// UTILS
 // ft_printf
 int		ft_printf(const char *format, ...);
@@ -116,7 +126,9 @@ int		ft_putpointer(void *adress);
 int		ft_puthexalower(long double number);
 int		ft_puthexaupper(long double number);
 
-////// Error
-void	ft_error(int num_error);
+// Other
+size_t	ft_strlen(const char *s);
+char	*ft_strrchr(const char *s, int c);
+int		ft_strcmp(const char *s1, const char *s2);
 
 #endif
