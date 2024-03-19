@@ -6,7 +6,7 @@
 /*   By: ehay <ehay@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/26 15:13:08 by ehay              #+#    #+#             */
-/*   Updated: 2024/03/18 15:45:25 by ehay             ###   ########.fr       */
+/*   Updated: 2024/03/19 15:40:31 by ehay             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -39,10 +39,9 @@ int	main(int argc, char **argv)
 		ft_struct_init(&game_init);
 		if (ft_open_map(argv[1], &game_init))
 		{
-			ft_printf("ouiiiiiiiii\n");
-			// ft_initialize_game(&game_init);
-			// ft_gameplay_start(&game_init);
-			// mlx_loop(game_init.mlx_ptr);
+			ft_initialize_game(&game_init);
+			ft_gameplay_start(&game_init);
+			mlx_loop(game_init.mlx_ptr);
 		}
 		else
 			ft_error(2);

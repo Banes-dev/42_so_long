@@ -6,24 +6,35 @@
 /*   By: ehay <ehay@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/26 15:03:51 by ehay              #+#    #+#             */
-/*   Updated: 2024/03/18 16:11:48 by ehay             ###   ########.fr       */
+/*   Updated: 2024/03/19 15:01:15 by ehay             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef SO_LONG_H
 # define SO_LONG_H
 
+# include "stdio.h"           // printf and other
 # include "unistd.h"
 # include "stdlib.h"          // malloc & free
 # include "stdarg.h"          // fonction va_
 # include "stddef.h"          // size_t
 # include "limits.h"          // INT_MIN et INT_MAX
 # include "fcntl.h" 		  // Read
-# include "string.h" 		  // Strerror
+# include "string.h" 		  // fonction string
 # include "../mlx/mlx.h"
+
+# ifndef BUFFER_SIZE
+#  define BUFFER_SIZE 1024
+# endif
 
 # define WINDOW_WIDTH 960
 # define WINDOW_HEIGHT 540
+
+# define PLAYER 'P'
+# define EXIT 'E'
+# define COLLECTIBLE 'C'
+# define WALL '1'
+# define EMPTY '0'
 
 # define ESC 65307
 # define W 119
@@ -107,14 +118,23 @@ typedef struct s_game_instance
 	t_game_objs			game_objs;
 }	t_game_instance;
 
+///////////
 ////// GAME
 // Map
 int		ft_open_map(char *map, t_game_instance *game_init);
+int		ft_count_lines(int fd);
+int		ft_check_read(t_game_instance *game_init);
+int		ft_map_dimensions(t_game_instance *game_init);
+int		ft_is_valid_map(t_game_instance *game_init);
 
 // Error
 void	ft_error(int num_error);
 
+// Free
+void	ft_free_map(t_game_instance *game_init);
+void	ft_free_img(t_game_instance *game_init);
 
+////////////
 ////// UTILS
 // ft_printf
 int		ft_printf(const char *format, ...);
@@ -126,9 +146,14 @@ int		ft_putpointer(void *adress);
 int		ft_puthexalower(long double number);
 int		ft_puthexaupper(long double number);
 
+// Get next line
+char	*get_next_line(int fd);
+
 // Other
 size_t	ft_strlen(const char *s);
 char	*ft_strrchr(const char *s, int c);
 int		ft_strcmp(const char *s1, const char *s2);
+int		ft_strchr(const char *str, int ch);
+void	*ft_calloc(size_t nmemb, size_t size);
 
 #endif
