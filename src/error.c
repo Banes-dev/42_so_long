@@ -6,7 +6,7 @@
 /*   By: ehay <ehay@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/14 15:24:54 by ehay              #+#    #+#             */
-/*   Updated: 2024/03/18 16:05:42 by ehay             ###   ########.fr       */
+/*   Updated: 2024/03/22 15:08:03 by ehay             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,6 +24,8 @@ void	ft_error(int num_error)
 		ft_printf("\033[96mError : \033[91mthe map is not valid.\033[0m\n");
 		ft_printf("\033[96mTry : \033[33ma valid map pls\n");
 	}
+	else if (num_error == 89)
+		ft_printf("\033[96mError : \033[91mMLX Library error.\033[0m\n");
 	else if (num_error == 666)
 		ft_printf("\033[96mError : \033[91mMalloc issue.\033[0m\n");
 	exit(1);

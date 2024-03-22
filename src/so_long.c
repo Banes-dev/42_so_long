@@ -6,7 +6,7 @@
 /*   By: ehay <ehay@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/26 15:13:08 by ehay              #+#    #+#             */
-/*   Updated: 2024/03/19 15:40:31 by ehay             ###   ########.fr       */
+/*   Updated: 2024/03/22 15:35:54 by ehay             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,7 +26,7 @@ void	ft_struct_init(t_game_instance *game_init)
 	if (objects == NULL)
 		ft_error(666);
 	game_init->game_objs = *objects;
-	free (objects);
+	free(objects);
 	return ;
 }
 
@@ -37,6 +37,8 @@ int	main(int argc, char **argv)
 	if (argc == 2 && argv[1] != NULL)
 	{
 		ft_struct_init(&game_init);
+		game_init.argc_tmp = argc;
+		game_init.argv_tmp = argv;
 		if (ft_open_map(argv[1], &game_init))
 		{
 			ft_initialize_game(&game_init);
@@ -50,3 +52,7 @@ int	main(int argc, char **argv)
 		ft_error(1);
 	return (0);
 }
+
+// mlx_init, init les images, count_mouvement = 0,
+// creer la fenetre(mlx_new_window), game_init->game_objs.player = 
+// game_init->game_objs.player_down;

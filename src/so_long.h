@@ -6,7 +6,7 @@
 /*   By: ehay <ehay@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/26 15:03:51 by ehay              #+#    #+#             */
-/*   Updated: 2024/03/19 15:01:15 by ehay             ###   ########.fr       */
+/*   Updated: 2024/03/22 15:33:02 by ehay             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -45,7 +45,7 @@
 # define DOWN 65364
 # define D 100
 # define RIGHT 65363
-# define R 114
+# define RESTART 114
 
 // OBJECTS : IMAGES
 typedef struct s_game_objs
@@ -111,6 +111,8 @@ typedef struct s_game_instance
 {
 	void				*mlx_ptr;
 	void				*win_ptr;
+	int					argc_tmp;
+	char				**argv_tmp;
 	t_map_data			map_init;
 	t_game_positions	positions_init;
 	t_game_data			game_data;
@@ -126,6 +128,17 @@ int		ft_count_lines(int fd);
 int		ft_check_read(t_game_instance *game_init);
 int		ft_map_dimensions(t_game_instance *game_init);
 int		ft_is_valid_map(t_game_instance *game_init);
+
+// Window
+void	ft_initialize_game(t_game_instance *game_init);
+void	ft_gameplay_start(t_game_instance *game_init);
+int		ft_check_keyboard(int key, t_game_instance *game_init);
+void	ft_win(t_game_instance *game_init);
+int		ft_map_draw(t_game_instance *game_init);
+
+// Exit
+void	ft_reset_game(t_game_instance *game_init);
+int		ft_exit_program(t_game_instance *game_init);
 
 // Error
 void	ft_error(int num_error);
