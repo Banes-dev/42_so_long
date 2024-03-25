@@ -6,7 +6,7 @@
 /*   By: ehay <ehay@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/22 15:01:13 by ehay              #+#    #+#             */
-/*   Updated: 2024/03/22 15:47:07 by ehay             ###   ########.fr       */
+/*   Updated: 2024/03/25 13:39:25 by ehay             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,23 +28,23 @@ void	ft_check_img(t_game_instance *game_init, void **image, char *path)
 void	ft_img_init(t_game_instance *game_init)
 {
 	ft_check_img(game_init, &game_init->game_objs.player_up,
-		"rscs/textures/Player/walkUP_00.xpm");
+		"ressources/img/player/up/mouse_running1.xpm"); // fait
 	ft_check_img(game_init, &game_init->game_objs.player_down,
-		"rscs/textures/Player/walkDown_00.xpm");
+		"ressources/img/player/down/mouse_running1_down.xpm"); // fait
 	ft_check_img(game_init, &game_init->game_objs.player_right,
-		"rscs/textures/Player/walkRight_00.xpm");
+		"ressources/img/player/right/mouse_running1_right.xpm"); // fait
 	ft_check_img(game_init, &game_init->game_objs.player_left,
-		"rscs/textures/Player/walkLeft_00.xpm");
+		"ressources/img/player/left/mouse_running1_left.xpm"); // fait
 	ft_check_img(game_init, &game_init->game_objs.collectible,
-		"rscs/textures/Collectibles/star_00.xpm");
+		"ressources/img/cheese.xpm"); // fait
 	ft_check_img(game_init, &game_init->game_objs.floor,
 		"ressources/img/wall/parquet.xpm"); // fait
 	ft_check_img(game_init, &game_init->game_objs.exit_open,
-		"rscs/textures/Exit/exit_open_01.xpm");
+		"ressources/img/door/door_open.xpm"); // fait
 	ft_check_img(game_init, &game_init->game_objs.exit_close,
-		"rscs/textures/Exit/exit_close_01.xpm");
+		"ressources/img/door/door_close.xpm"); // fait
 	ft_check_img(game_init, &game_init->game_objs.wall,
-		"rscs/textures/Tiles/blockSimple.xpm");
+		"ressources/img/wall/wall.xpm"); // fait
 }
 
 void	ft_initialize_game(t_game_instance *game_init)

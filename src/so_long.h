@@ -6,7 +6,7 @@
 /*   By: ehay <ehay@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/26 15:03:51 by ehay              #+#    #+#             */
-/*   Updated: 2024/03/22 15:33:02 by ehay             ###   ########.fr       */
+/*   Updated: 2024/03/25 13:45:00 by ehay             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -122,6 +122,7 @@ typedef struct s_game_instance
 
 ///////////
 ////// GAME
+int		main(int argc, char **argv);
 // Map
 int		ft_open_map(char *map, t_game_instance *game_init);
 int		ft_count_lines(int fd);
@@ -134,6 +135,7 @@ void	ft_initialize_game(t_game_instance *game_init);
 void	ft_gameplay_start(t_game_instance *game_init);
 int		ft_check_keyboard(int key, t_game_instance *game_init);
 void	ft_win(t_game_instance *game_init);
+int		ft_events_pressed(t_game_instance *game_init, int column, int row);
 int		ft_map_draw(t_game_instance *game_init);
 
 // Exit

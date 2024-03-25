@@ -3,7 +3,8 @@ CC = cc
 CFLAGS = -g -Wall -Wextra -Werror
 
 NAME = so_long
-FUNC = src/so_long.c src/error.c src/map.c src/map_utils.c src/map_dimension.c src/map_validate.c  src/free.c \
+FUNC = src/draw_map.c src/error.c src/exit.c src/free.c src/game_event.c src/game_event2.c  src/game_init.c \
+			src/map_dimension.c src/map_utils.c src/map_validate.c src/map.c src/so_long.c  \
 			src/utils/printf.c src/utils/printf_utils.c src/utils/other_utils.c src/utils/get_next_line.c
 OBJS = ${FUNC:.c=.o}
 
