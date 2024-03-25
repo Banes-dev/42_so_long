@@ -6,11 +6,11 @@
 /*   By: ehay <ehay@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/22 15:01:13 by ehay              #+#    #+#             */
-/*   Updated: 2024/03/25 15:49:33 by ehay             ###   ########.fr       */
+/*   Updated: 2024/03/25 16:01:20 by ehay             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "so_long.h"
+#include "so_long_bonus.h"
 
 void	ft_check_img(t_game_instance *game_init, void **image, char *path)
 {
@@ -58,7 +58,7 @@ void	ft_initialize_game(t_game_instance *game_init)
 	game_init->win_ptr = mlx_new_window(game_init->mlx_ptr,
 			game_init->map_init.resolutions.settings_map_width
 			* 32, game_init->map_init.resolutions.settings_map_height
-			* 32, "The Rat");
+			* 32, "The Rat Bonus");
 	if (game_init->win_ptr == NULL)
 		ft_error(89);
 }
