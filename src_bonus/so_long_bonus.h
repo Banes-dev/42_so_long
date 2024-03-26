@@ -6,7 +6,7 @@
 /*   By: ehay <ehay@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/26 15:03:51 by ehay              #+#    #+#             */
-/*   Updated: 2024/03/25 15:53:42 by ehay             ###   ########.fr       */
+/*   Updated: 2024/03/26 15:05:39 by ehay             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -83,6 +83,7 @@ typedef struct s_game_data
 	int	count_empty;
 	int	count_movements;
 	int	endgame;
+	int	anim_collectible;
 }	t_game_data;
 
 // GAME RESOLUTIONS 
@@ -123,6 +124,7 @@ typedef struct s_game_instance
 ///////////
 ////// GAME
 int		main(int argc, char **argv);
+int		ft_anim_collectable(t_game_instance *game_init);
 // Map
 int		ft_open_map(char *map, t_game_instance *game_init);
 int		ft_count_lines(int fd);
@@ -170,5 +172,6 @@ char	*ft_strrchr(const char *s, int c);
 int		ft_strcmp(const char *s1, const char *s2);
 int		ft_strchr(const char *str, int ch);
 void	*ft_calloc(size_t nmemb, size_t size);
+char	*ft_itoa(int n);
 
 #endif

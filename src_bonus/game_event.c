@@ -6,7 +6,7 @@
 /*   By: ehay <ehay@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/22 15:15:20 by ehay              #+#    #+#             */
-/*   Updated: 2024/03/25 15:53:13 by ehay             ###   ########.fr       */
+/*   Updated: 2024/03/26 15:37:52 by ehay             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -76,9 +76,32 @@ int	ft_events_pressed(t_game_instance *game_init, int column, int row)
 	return (ft_print_shell(game_init));
 }
 
+int	ft_player_moves(t_game_instance *game_init)
+{
+	char	*movements;
+
+	movements = ft_itoa (game_init->game_data.count_movements);
+	mlx_string_put(game_init->mlx_ptr, game_init->win_ptr,
+		20, 16, 0x00FFFFFF, movements);
+	free(movements);
+	return (0);
+}
+
+int	ft_animbeforemap(void *param)
+{
+	t_game_instance	*game_init;
+
+	game_init = (t_game_instance *)param;
+	ft_player_moves(game_init);
+	ft_anim_collectable(game_init);
+	ft_map_draw(game_init);
+	return (0);
+}
+
+
 void	ft_gameplay_start(t_game_instance *game_init)
 {
 	mlx_hook(game_init->win_ptr, 17, 0, ft_exit_program, game_init);
 	mlx_hook(game_init->win_ptr, 2, (1L << 0), ft_check_keyboard, game_init);
-	mlx_loop_hook(game_init->mlx_ptr, &ft_map_draw, game_init);
+	mlx_loop_hook(game_init->mlx_ptr, &ft_animbeforemap, game_init);
 }
