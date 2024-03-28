@@ -6,7 +6,7 @@
 /*   By: ehay <ehay@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/26 15:03:51 by ehay              #+#    #+#             */
-/*   Updated: 2024/03/25 13:45:00 by ehay             ###   ########.fr       */
+/*   Updated: 2024/03/28 16:55:47 by ehay             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -45,7 +45,6 @@
 # define DOWN 65364
 # define D 100
 # define RIGHT 65363
-# define RESTART 114
 
 // OBJECTS : IMAGES
 typedef struct s_game_objs
@@ -139,7 +138,6 @@ int		ft_events_pressed(t_game_instance *game_init, int column, int row);
 int		ft_map_draw(t_game_instance *game_init);
 
 // Exit
-void	ft_reset_game(t_game_instance *game_init);
 int		ft_exit_program(t_game_instance *game_init);
 
 // Error

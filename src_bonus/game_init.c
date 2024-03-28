@@ -6,7 +6,7 @@
 /*   By: ehay <ehay@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/22 15:01:13 by ehay              #+#    #+#             */
-/*   Updated: 2024/03/25 16:01:20 by ehay             ###   ########.fr       */
+/*   Updated: 2024/03/28 13:58:04 by ehay             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,6 +37,8 @@ void	ft_img_init(t_game_instance *game_init)
 		"ressources/img/player/left/mouse_running1_left.xpm");
 	ft_check_img(game_init, &game_init->game_objs.collectible,
 		"ressources/img/wall/cheese.xpm");
+	ft_check_img(game_init, &game_init->game_objs.ennemies,
+		"ressources/img/tapette.xpm");
 	ft_check_img(game_init, &game_init->game_objs.floor,
 		"ressources/img/wall/carrelage.xpm");
 	ft_check_img(game_init, &game_init->game_objs.exit_open,

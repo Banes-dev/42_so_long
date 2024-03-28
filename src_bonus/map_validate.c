@@ -6,7 +6,7 @@
 /*   By: ehay <ehay@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/19 14:59:51 by ehay              #+#    #+#             */
-/*   Updated: 2024/03/25 15:52:43 by ehay             ###   ########.fr       */
+/*   Updated: 2024/03/28 14:00:48 by ehay             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -72,6 +72,8 @@ int	ft_count_map_objects(t_game_instance *game_init)
 		{
 			if (game_init->map_init.matrice[row][column] == PLAYER)
 				game_init->game_data.count_player++;
+			else if (game_init->map_init.matrice[row][column] == ENNEMIES)
+				game_init->game_data.count_ennemies++;
 			else if (game_init->map_init.matrice[row][column] == EXIT)
 				game_init->game_data.count_exit++;
 			else if (game_init->map_init.matrice[row][column] == COLLECTIBLE)

@@ -6,7 +6,7 @@
 /*   By: ehay <ehay@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/22 15:29:34 by ehay              #+#    #+#             */
-/*   Updated: 2024/03/26 15:37:43 by ehay             ###   ########.fr       */
+/*   Updated: 2024/03/28 13:57:28 by ehay             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -55,6 +55,8 @@ int	ft_map_draw(t_game_instance *game_init)
 				ft_set(game_init, game_init->game_objs.wall, column, row);
 			if (game_init->map_init.matrice[row][column] == EMPTY)
 				ft_set(game_init, game_init->game_objs.floor, column, row);
+			if (game_init->map_init.matrice[row][column] == ENNEMIES)
+				ft_set(game_init, game_init->game_objs.ennemies, column, row);
 			if (game_init->map_init.matrice[row][column] == PLAYER)
 				ft_set(game_init, game_init->game_objs.player, column, row);
 			ft_map_continues(game_init, column, row);

@@ -6,7 +6,7 @@
 /*   By: ehay <ehay@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/22 15:15:20 by ehay              #+#    #+#             */
-/*   Updated: 2024/03/26 15:37:52 by ehay             ###   ########.fr       */
+/*   Updated: 2024/03/28 16:55:27 by ehay             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -73,6 +73,8 @@ int	ft_events_pressed(t_game_instance *game_init, int column, int row)
 	else if (current_tile == EXIT
 		&& game_init->game_data.count_collectible == 0)
 		ft_win(game_init);
+	else if (current_tile == ENNEMIES)
+		ft_exit_program(game_init);
 	return (ft_print_shell(game_init));
 }
 

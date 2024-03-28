@@ -6,7 +6,7 @@
 /*   By: ehay <ehay@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/26 15:03:51 by ehay              #+#    #+#             */
-/*   Updated: 2024/03/26 15:05:39 by ehay             ###   ########.fr       */
+/*   Updated: 2024/03/28 16:55:31 by ehay             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,6 +35,7 @@
 # define COLLECTIBLE 'C'
 # define WALL '1'
 # define EMPTY '0'
+# define ENNEMIES 'S'
 
 # define ESC 65307
 # define W 119
@@ -45,7 +46,6 @@
 # define DOWN 65364
 # define D 100
 # define RIGHT 65363
-# define RESTART 114
 
 // OBJECTS : IMAGES
 typedef struct s_game_objs
@@ -56,6 +56,7 @@ typedef struct s_game_objs
 	void	*player_down;
 	void	*player_up;
 	void	*collectible;
+	void	*ennemies;
 	void	*exit_open;
 	void	*exit_close;
 	void	*wall;
@@ -79,6 +80,7 @@ typedef struct s_game_data
 	int	count_player;
 	int	count_exit;
 	int	count_collectible;
+	int	count_ennemies;
 	int	count_wall;
 	int	count_empty;
 	int	count_movements;
@@ -141,7 +143,6 @@ int		ft_events_pressed(t_game_instance *game_init, int column, int row);
 int		ft_map_draw(t_game_instance *game_init);
 
 // Exit
-void	ft_reset_game(t_game_instance *game_init);
 int		ft_exit_program(t_game_instance *game_init);
 
 // Error
