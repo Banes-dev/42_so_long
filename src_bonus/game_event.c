@@ -6,7 +6,7 @@
 /*   By: ehay <ehay@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/22 15:15:20 by ehay              #+#    #+#             */
-/*   Updated: 2024/03/28 16:55:27 by ehay             ###   ########.fr       */
+/*   Updated: 2024/03/29 14:01:20 by ehay             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -82,14 +82,14 @@ int	ft_player_moves(t_game_instance *game_init)
 {
 	char	*movements;
 
-	movements = ft_itoa (game_init->game_data.count_movements);
+	movements = ft_itoa(game_init->game_data.count_movements);
 	mlx_string_put(game_init->mlx_ptr, game_init->win_ptr,
 		20, 16, 0x00FFFFFF, movements);
 	free(movements);
 	return (0);
 }
 
-int	ft_animbeforemap(void *param)
+int	ft_loop_game(void *param)
 {
 	t_game_instance	*game_init;
 
@@ -100,10 +100,9 @@ int	ft_animbeforemap(void *param)
 	return (0);
 }
 
-
 void	ft_gameplay_start(t_game_instance *game_init)
 {
 	mlx_hook(game_init->win_ptr, 17, 0, ft_exit_program, game_init);
 	mlx_hook(game_init->win_ptr, 2, (1L << 0), ft_check_keyboard, game_init);
-	mlx_loop_hook(game_init->mlx_ptr, &ft_animbeforemap, game_init);
+	mlx_loop_hook(game_init->mlx_ptr, ft_loop_game, game_init);
 }
