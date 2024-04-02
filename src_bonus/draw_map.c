@@ -6,7 +6,7 @@
 /*   By: ehay <ehay@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/22 15:29:34 by ehay              #+#    #+#             */
-/*   Updated: 2024/03/28 13:57:28 by ehay             ###   ########.fr       */
+/*   Updated: 2024/04/02 13:54:17 by ehay             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,17 +28,6 @@ void	ft_map_continues(t_game_instance *game_init, int column, int row)
 		ft_set(game_init, game_init->game_objs.exit_close, column, row);
 	return ;
 }
-
-// int	ft_player_moves(t_game_instance *game_init)
-// {
-// 	char	*movements;
-
-// 	movements = ft_itoa (game_init->game_data.count_movements);
-// 	mlx_string_put(game_init->mlx_ptr, game_init->win_ptr,
-// 		60, 16, 0x00FFFFFF, movements);
-// 	free(movements);
-// 	return (0);
-// }
 
 int	ft_map_draw(t_game_instance *game_init)
 {

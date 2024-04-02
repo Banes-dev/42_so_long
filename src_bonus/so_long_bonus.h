@@ -6,7 +6,7 @@
 /*   By: ehay <ehay@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/26 15:03:51 by ehay              #+#    #+#             */
-/*   Updated: 2024/03/28 16:55:31 by ehay             ###   ########.fr       */
+/*   Updated: 2024/04/02 14:03:46 by ehay             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -55,6 +55,10 @@ typedef struct s_game_objs
 	void	*player_right;
 	void	*player_down;
 	void	*player_up;
+	void	*player_left2;
+	void	*player_right2;
+	void	*player_down2;
+	void	*player_up2;
 	void	*collectible;
 	void	*ennemies;
 	void	*exit_open;
@@ -141,6 +145,12 @@ int		ft_check_keyboard(int key, t_game_instance *game_init);
 void	ft_win(t_game_instance *game_init);
 int		ft_events_pressed(t_game_instance *game_init, int column, int row);
 int		ft_map_draw(t_game_instance *game_init);
+
+// Keyboard
+int		keyboard_up(t_game_instance *game_init, int anim);
+int		keyboard_down(t_game_instance *game_init, int anim);
+int		keyboard_left(t_game_instance *game_init, int anim);
+int		keyboard_right(t_game_instance *game_init, int anim);
 
 // Exit
 int		ft_exit_program(t_game_instance *game_init);

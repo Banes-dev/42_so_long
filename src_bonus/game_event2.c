@@ -6,7 +6,7 @@
 /*   By: ehay <ehay@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/22 15:22:36 by ehay              #+#    #+#             */
-/*   Updated: 2024/03/28 16:54:06 by ehay             ###   ########.fr       */
+/*   Updated: 2024/04/02 14:10:51 by ehay             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,26 +24,27 @@ int	ft_non_special(int key, t_game_instance *game_init)
 
 int	ft_check_keyboard(int key, t_game_instance *game_init)
 {
+	static int	anim_state_up = 0;
+	static int	anim_state_down = 0;
+	static int	anim_state_right = 0;
+	static int	anim_state_left = 0;
+
 	ft_non_special(key, game_init);
 	if (key == W || key == UP)
 	{
-		game_init->game_objs.player = game_init->game_objs.player_up;
-		ft_events_pressed(game_init, 0, -1);
-	}
-	else if (key == A || key == LEFT)
-	{
-		game_init->game_objs.player = game_init->game_objs.player_left;
-		ft_events_pressed(game_init, -1, 0);
+		anim_state_up = keyboard_up(game_init, anim_state_up);
 	}
 	else if (key == S || key == DOWN)
 	{
-		game_init->game_objs.player = game_init->game_objs.player_down;
-		ft_events_pressed(game_init, 0, +1);
+		anim_state_down = keyboard_down(game_init, anim_state_down);
+	}
+	else if (key == A || key == LEFT)
+	{
+		anim_state_left = keyboard_left(game_init, anim_state_left);
 	}
 	else if (key == D || key == RIGHT)
 	{
-		game_init->game_objs.player = game_init->game_objs.player_right;
-		ft_events_pressed(game_init, +1, 0);
+		anim_state_right = keyboard_right(game_init, anim_state_right);
 	}
 	return (0);
 }

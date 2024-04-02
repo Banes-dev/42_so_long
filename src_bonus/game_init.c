@@ -6,7 +6,7 @@
 /*   By: ehay <ehay@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/22 15:01:13 by ehay              #+#    #+#             */
-/*   Updated: 2024/03/29 15:24:14 by ehay             ###   ########.fr       */
+/*   Updated: 2024/04/02 13:40:06 by ehay             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,6 +35,16 @@ void	ft_img_init(t_game_instance *game_init)
 		"ressources/img/player/right/mouse_right_1.xpm");
 	ft_check_img(game_init, &game_init->game_objs.player_left,
 		"ressources/img/player/left/mouse_left_1.xpm");
+
+	ft_check_img(game_init, &game_init->game_objs.player_up2,
+		"ressources/img/player/up/mouse_up_2.xpm");
+	ft_check_img(game_init, &game_init->game_objs.player_down2,
+		"ressources/img/player/down/mouse_down_2.xpm");
+	ft_check_img(game_init, &game_init->game_objs.player_right2,
+		"ressources/img/player/right/mouse_right_2.xpm");
+	ft_check_img(game_init, &game_init->game_objs.player_left2,
+		"ressources/img/player/left/mouse_left_2.xpm");
+	////////////////////////////////////////////////////////////
 	ft_check_img(game_init, &game_init->game_objs.collectible,
 		"ressources/img/wall/cheese.xpm");
 	ft_check_img(game_init, &game_init->game_objs.ennemies,
