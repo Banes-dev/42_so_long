@@ -6,7 +6,7 @@
 /*   By: ehay <ehay@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/19 14:39:25 by ehay              #+#    #+#             */
-/*   Updated: 2024/03/25 15:53:15 by ehay             ###   ########.fr       */
+/*   Updated: 2024/04/04 13:04:44 by ehay             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,7 +35,12 @@ void	ft_free_img(t_game_instance *game_init)
 	mlx_destroy_image(game_init->mlx_ptr, game_init->game_objs.player_left);
 	mlx_destroy_image(game_init->mlx_ptr, game_init->game_objs.player_right);
 	mlx_destroy_image(game_init->mlx_ptr, game_init->game_objs.player_down);
+	mlx_destroy_image(game_init->mlx_ptr, game_init->game_objs.player_up2);
+	mlx_destroy_image(game_init->mlx_ptr, game_init->game_objs.player_left2);
+	mlx_destroy_image(game_init->mlx_ptr, game_init->game_objs.player_right2);
+	mlx_destroy_image(game_init->mlx_ptr, game_init->game_objs.player_down2);
 	mlx_destroy_image(game_init->mlx_ptr, game_init->game_objs.collectible);
+	mlx_destroy_image(game_init->mlx_ptr, game_init->game_objs.ennemies);
 	mlx_destroy_image(game_init->mlx_ptr, game_init->game_objs.exit_open);
 	mlx_destroy_image(game_init->mlx_ptr, game_init->game_objs.exit_close);
 	mlx_destroy_image(game_init->mlx_ptr, game_init->game_objs.wall);

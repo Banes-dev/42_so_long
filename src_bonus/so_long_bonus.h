@@ -6,7 +6,7 @@
 /*   By: ehay <ehay@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/26 15:03:51 by ehay              #+#    #+#             */
-/*   Updated: 2024/04/02 14:03:46 by ehay             ###   ########.fr       */
+/*   Updated: 2024/04/02 15:14:12 by ehay             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -131,11 +131,13 @@ typedef struct s_game_instance
 ////// GAME
 int		main(int argc, char **argv);
 int		ft_anim_collectable(t_game_instance *game_init);
+int		ft_player_moves(t_game_instance *game_init);
 // Map
 int		ft_open_map(char *map, t_game_instance *game_init);
 int		ft_count_lines(int fd);
 int		ft_check_read(t_game_instance *game_init);
 int		ft_map_dimensions(t_game_instance *game_init);
+int		ft_is_map_shape_valid(t_game_instance *game_init);
 int		ft_is_valid_map(t_game_instance *game_init);
 
 // Window
@@ -147,10 +149,10 @@ int		ft_events_pressed(t_game_instance *game_init, int column, int row);
 int		ft_map_draw(t_game_instance *game_init);
 
 // Keyboard
-int		keyboard_up(t_game_instance *game_init, int anim);
-int		keyboard_down(t_game_instance *game_init, int anim);
-int		keyboard_left(t_game_instance *game_init, int anim);
-int		keyboard_right(t_game_instance *game_init, int anim);
+int		ft_keyboard_up(t_game_instance *game_init, int anim);
+int		ft_keyboard_down(t_game_instance *game_init, int anim);
+int		ft_keyboard_left(t_game_instance *game_init, int anim);
+int		ft_keyboard_right(t_game_instance *game_init, int anim);
 
 // Exit
 int		ft_exit_program(t_game_instance *game_init);

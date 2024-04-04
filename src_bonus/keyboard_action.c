@@ -6,13 +6,13 @@
 /*   By: ehay <ehay@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/02 13:55:33 by ehay              #+#    #+#             */
-/*   Updated: 2024/04/02 14:09:23 by ehay             ###   ########.fr       */
+/*   Updated: 2024/04/02 14:56:07 by ehay             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "so_long_bonus.h"
 
-int	keyboard_up(t_game_instance *game_init, int anim)
+int	ft_keyboard_up(t_game_instance *game_init, int anim)
 {
 	if (anim == 0)
 	{
@@ -28,7 +28,7 @@ int	keyboard_up(t_game_instance *game_init, int anim)
 	return (anim);
 }
 
-int	keyboard_down(t_game_instance *game_init, int anim)
+int	ft_keyboard_down(t_game_instance *game_init, int anim)
 {
 	if (anim == 0)
 	{
@@ -44,7 +44,7 @@ int	keyboard_down(t_game_instance *game_init, int anim)
 	return (anim);
 }
 
-int	keyboard_left(t_game_instance *game_init, int anim)
+int	ft_keyboard_left(t_game_instance *game_init, int anim)
 {
 	if (anim == 0)
 	{
@@ -60,7 +60,7 @@ int	keyboard_left(t_game_instance *game_init, int anim)
 	return (anim);
 }
 
-int	keyboard_right(t_game_instance *game_init, int anim)
+int	ft_keyboard_right(t_game_instance *game_init, int anim)
 {
 	if (anim == 0)
 	{

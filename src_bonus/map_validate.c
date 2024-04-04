@@ -6,25 +6,11 @@
 /*   By: ehay <ehay@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/19 14:59:51 by ehay              #+#    #+#             */
-/*   Updated: 2024/03/28 14:00:48 by ehay             ###   ########.fr       */
+/*   Updated: 2024/04/02 15:12:51 by ehay             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "so_long_bonus.h"
-
-int	ft_is_map_shape_valid(t_game_instance *game_init)
-{
-	if (game_init->map_init.cols_matrice <= 0
-		|| game_init->map_init.rows_matrice <= 0)
-		return (0);
-	if (game_init->map_init.size_matrice == 0)
-		return (0);
-	if (game_init->map_init.size_matrice % game_init->map_init.rows_matrice == 0
-		&& game_init->map_init.size_matrice / game_init->map_init.rows_matrice
-		== game_init->map_init.cols_matrice)
-		return (1);
-	return (0);
-}
 
 int	ft_is_wall(t_game_instance *game_init)
 {
@@ -59,6 +45,22 @@ int	ft_have_requires(t_game_instance *game_init)
 	return (1);
 }
 
+void	ft_count_second(t_game_instance *game_init, int row, int colum)
+{
+	if (game_init->map_init.matrice[row][colum] == PLAYER)
+		game_init->game_data.count_player++;
+	else if (game_init->map_init.matrice[row][colum] == ENNEMIES)
+		game_init->game_data.count_ennemies++;
+	else if (game_init->map_init.matrice[row][colum] == EXIT)
+		game_init->game_data.count_exit++;
+	else if (game_init->map_init.matrice[row][colum] == COLLECTIBLE)
+		game_init->game_data.count_collectible++;
+	else if (game_init->map_init.matrice[row][colum] == WALL)
+		game_init->game_data.count_wall++;
+	else if (game_init->map_init.matrice[row][colum] == EMPTY)
+		game_init->game_data.count_empty++;
+}
+
 int	ft_count_map_objects(t_game_instance *game_init)
 {
 	int	row;
@@ -70,18 +72,13 @@ int	ft_count_map_objects(t_game_instance *game_init)
 		column = 0;
 		while (game_init->map_init.matrice[row][column])
 		{
-			if (game_init->map_init.matrice[row][column] == PLAYER)
-				game_init->game_data.count_player++;
-			else if (game_init->map_init.matrice[row][column] == ENNEMIES)
-				game_init->game_data.count_ennemies++;
-			else if (game_init->map_init.matrice[row][column] == EXIT)
-				game_init->game_data.count_exit++;
-			else if (game_init->map_init.matrice[row][column] == COLLECTIBLE)
-				game_init->game_data.count_collectible++;
-			else if (game_init->map_init.matrice[row][column] == WALL)
-				game_init->game_data.count_wall++;
-			else if (game_init->map_init.matrice[row][column] == EMPTY)
-				game_init->game_data.count_empty++;
+			if (game_init->map_init.matrice[row][column] == PLAYER
+				|| game_init->map_init.matrice[row][column] == ENNEMIES
+				|| game_init->map_init.matrice[row][column] == EXIT
+				|| game_init->map_init.matrice[row][column] == COLLECTIBLE
+				|| game_init->map_init.matrice[row][column] == WALL
+				|| game_init->map_init.matrice[row][column] == EMPTY)
+				ft_count_second(game_init, row, column);
 			else if (game_init->map_init.matrice[row][column] != '\n')
 				return (0);
 			column++;
