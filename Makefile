@@ -13,7 +13,7 @@ OBJS = ${FUNC:.c=.o}
 NAME_BONUS = so_long_bonus
 FUNC_BONUS = src_bonus/draw_map.c src_bonus/error.c src_bonus/exit.c src_bonus/free.c src_bonus/game_event.c src_bonus/game_event2.c \
 			src_bonus/game_init.c src_bonus/map_dimension.c src_bonus/map_utils.c src_bonus/map_validate.c src_bonus/map_validate_utils.c \
-			src_bonus/map.c src_bonus/so_long_bonus.c src_bonus/anim.c src_bonus/keyboard_action.c \
+			src_bonus/map.c src_bonus/so_long_bonus.c src_bonus/anim.c src_bonus/keyboard_action.c src_bonus/valid_path.c \
 			src_bonus/utils/printf.c src_bonus/utils/printf_utils.c src_bonus/utils/other_utils.c src_bonus/utils/get_next_line.c src_bonus/utils/itoa.c
 OBJS_BONUS = ${FUNC_BONUS:.c=.o}
 

@@ -6,7 +6,7 @@
 /*   By: ehay <ehay@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/22 15:29:34 by ehay              #+#    #+#             */
-/*   Updated: 2024/04/02 13:54:17 by ehay             ###   ########.fr       */
+/*   Updated: 2024/04/05 13:26:13 by ehay             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,6 +29,22 @@ void	ft_map_continues(t_game_instance *game_init, int column, int row)
 	return ;
 }
 
+void	ft_set_map_draw(t_game_instance *game_init, int row, int column)
+{
+	if (game_init->map_init.matrice[row][column] == WALL)
+		ft_set(game_init, game_init->game_objs.wall, column, row);
+	if (game_init->map_init.matrice[row][column] == EMPTY)
+		ft_set(game_init, game_init->game_objs.floor, column, row);
+	if (game_init->map_init.matrice[row][column] == ENNEMIES)
+		ft_set(game_init, game_init->game_objs.ennemies, column, row);
+	if (game_init->map_init.matrice[row][column] == PLAYER)
+		ft_set(game_init, game_init->game_objs.player, column, row);
+	ft_map_continues(game_init, column, row);
+	if (game_init->map_init.matrice[row][column] == COLLECTIBLE)
+		ft_set(game_init, game_init->game_objs.collectible,
+			column, row);
+}
+
 int	ft_map_draw(t_game_instance *game_init)
 {
 	int	row;
@@ -40,20 +56,11 @@ int	ft_map_draw(t_game_instance *game_init)
 		column = 0;
 		while (game_init->map_init.matrice[row][column])
 		{
-			if (game_init->map_init.matrice[row][column] == WALL)
-				ft_set(game_init, game_init->game_objs.wall, column, row);
-			if (game_init->map_init.matrice[row][column] == EMPTY)
-				ft_set(game_init, game_init->game_objs.floor, column, row);
-			if (game_init->map_init.matrice[row][column] == ENNEMIES)
-				ft_set(game_init, game_init->game_objs.ennemies, column, row);
-			if (game_init->map_init.matrice[row][column] == PLAYER)
-				ft_set(game_init, game_init->game_objs.player, column, row);
-			ft_map_continues(game_init, column, row);
-			if (game_init->map_init.matrice[row][column] == COLLECTIBLE)
-				ft_set(game_init, game_init->game_objs.collectible,
-					column, row);
+			ft_set_map_draw(game_init, row, column);
 			column++;
 		}
+		ft_player_moves(game_init);
+		ft_anim_collectable(game_init);
 	}
 	return (0);
 }

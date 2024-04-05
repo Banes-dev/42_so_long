@@ -6,7 +6,7 @@
 /*   By: ehay <ehay@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/26 15:03:51 by ehay              #+#    #+#             */
-/*   Updated: 2024/04/02 15:14:12 by ehay             ###   ########.fr       */
+/*   Updated: 2024/04/05 15:38:32 by ehay             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -46,6 +46,16 @@
 # define DOWN 65364
 # define D 100
 # define RIGHT 65363
+
+
+// Path
+typedef struct s_game_path
+{
+	int		start_row;
+	int		start_col;
+	int		exit_found;
+	int		collec_found;
+}	t_game_path;
 
 // OBJECTS : IMAGES
 typedef struct s_game_objs
@@ -125,6 +135,7 @@ typedef struct s_game_instance
 	t_game_data			game_data;
 	t_game_resolutions	resolutions_init;
 	t_game_objs			game_objs;
+	t_game_path			path_setting;
 }	t_game_instance;
 
 ///////////
@@ -139,6 +150,10 @@ int		ft_check_read(t_game_instance *game_init);
 int		ft_map_dimensions(t_game_instance *game_init);
 int		ft_is_map_shape_valid(t_game_instance *game_init);
 int		ft_is_valid_map(t_game_instance *game_init);
+
+// Valid Path
+int		ft_valid_path(t_game_instance *game_init);
+int		is_valid_path(t_game_instance *game_init, int row, int col);
 
 // Window
 void	ft_initialize_game(t_game_instance *game_init);

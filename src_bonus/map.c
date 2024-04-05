@@ -6,7 +6,7 @@
 /*   By: ehay <ehay@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/18 15:33:14 by ehay              #+#    #+#             */
-/*   Updated: 2024/03/25 15:52:41 by ehay             ###   ########.fr       */
+/*   Updated: 2024/04/05 15:20:41 by ehay             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -91,13 +91,13 @@ int	ft_open_map(char *map, t_game_instance *game_init)
 	if (!game_init->map_init.first_read_matrice
 		|| game_init->map_init.first_read_matrice < 3)
 	{
-		close (fd);
+		close(fd);
 		ft_free_map(game_init);
 		return (0);
 	}
 	if (!ft_read_map(fd, game_init))
 	{
-		close (fd);
+		close(fd);
 		ft_free_map(game_init);
 		return (0);
 	}

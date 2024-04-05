@@ -6,7 +6,7 @@
 /*   By: ehay <ehay@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/22 15:15:20 by ehay              #+#    #+#             */
-/*   Updated: 2024/04/02 15:14:22 by ehay             ###   ########.fr       */
+/*   Updated: 2024/04/05 13:26:29 by ehay             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -83,9 +83,8 @@ int	ft_loop_game(void *param)
 	t_game_instance	*game_init;
 
 	game_init = (t_game_instance *)param;
-	ft_player_moves(game_init);
-	ft_anim_collectable(game_init);
 	ft_map_draw(game_init);
+	usleep(1000000 / 60);
 	return (0);
 }
 
