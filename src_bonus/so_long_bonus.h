@@ -6,7 +6,7 @@
 /*   By: ehay <ehay@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/26 15:03:51 by ehay              #+#    #+#             */
-/*   Updated: 2024/04/08 14:51:05 by ehay             ###   ########.fr       */
+/*   Updated: 2024/04/09 14:18:59 by ehay             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -178,7 +178,7 @@ void	ft_error(int num_error, t_game_instance *game_init);
 
 // Free
 void	ft_free_map(t_game_instance *game_init);
-void	ft_free_matrix(char **matrix);
+void	ft_free_matrix(t_game_instance *game_init, char **matrix);
 void	ft_free_img(t_game_instance *game_init);
 
 ////////////

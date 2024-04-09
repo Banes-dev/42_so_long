@@ -6,7 +6,7 @@
 /*   By: ehay <ehay@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/05 13:36:12 by ehay              #+#    #+#             */
-/*   Updated: 2024/04/08 14:22:47 by ehay             ###   ########.fr       */
+/*   Updated: 2024/04/09 14:18:07 by ehay             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -117,9 +117,9 @@ int	ft_valid_path(t_game_instance *game_init)
 			game_init->path_setting.start_row,
 			game_init->path_setting.start_col))
 	{
-		ft_free_matrix(matrix_copy);
+		ft_free_matrix(game_init, matrix_copy);
 		return (0);
 	}
-	ft_free_matrix(matrix_copy);
+	ft_free_matrix(game_init, matrix_copy);
 	return (1);
 }

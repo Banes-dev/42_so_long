@@ -6,7 +6,7 @@
 /*   By: ehay <ehay@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/14 15:24:54 by ehay              #+#    #+#             */
-/*   Updated: 2024/04/08 14:50:31 by ehay             ###   ########.fr       */
+/*   Updated: 2024/04/09 14:17:06 by ehay             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,7 +29,6 @@ void	ft_error(int num_error, t_game_instance *game_init)
 		ft_printf("\033[96mError : \033[91mPath not possible.\033[0m\n");
 		ft_printf("\033[96mTry : \033[33ma valid map pls\n");
 		ft_free_map(game_init);
-		ft_free_img(game_init);
 	}
 	else if (num_error == 89)
 		ft_printf("\033[96mError : \033[91mMLX Library error.\033[0m\n");
